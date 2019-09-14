@@ -81,7 +81,10 @@ export default {
   methods: {
       submitHandler(e) {
           e.preventDefault(e);
-          console.log("kk");
+          this.$http.get('/api/register', {params: this.model})
+            .then(res => {
+                console.log(res);
+            })
       }
   }
 };
