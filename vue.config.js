@@ -40,6 +40,17 @@ module.exports = {
                 })
               }
             })
+
+            app.get('/api/banner', (req, res) => {
+              return res.json({
+                code: 0,
+                items: [
+                  {url: 'https://xdclass.net/#/coursedetail?video_id=23', image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/1903/vue2.png'},
+                  {url: 'https://xdclass.net/#/coursedetail?video_id=22', image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/1901/webpack/webpack.png'},
+                  {url: 'https://xdclass.net/#/coursedetail?video_id=20', image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/1901/vue/vue.png'},
+                ]
+              })
+            })
           }
         }
     },

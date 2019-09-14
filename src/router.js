@@ -20,11 +20,11 @@ export default new Router({
       name: 'register',
       component: Register
     },
-    // {
-    //   path: '/login',
-    //   name: '/login',
-    //   component: Login
-    // },
+    {
+      path: '/index',
+      name: 'index',
+      component: () => import('./views/Index.vue')
+    },
     {
       path: '/login',
       name: 'login',
