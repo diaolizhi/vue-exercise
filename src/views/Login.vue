@@ -67,11 +67,19 @@ export default {
     };
   },
   methods: {
-    submitHandler(e) {
+    async submitHandler(e) {
       e.preventDefault(e);
-      this.$http.get("/api/login", { params: this.model }).then(res => {
-        console.log(res);
-      });
+      try {
+          const result = await this.$http.get('/api/login', {params: this.model})
+          if(result.data.code == 0) {
+              this.$store.commit('setToken', result.data.token)
+              window.localStorage.setItem('token', result.data.token)
+          } else {
+              console.log('登录失败')
+          }
+      } catch(err) {
+          console.log(err)
+      }
     }
   }
 };

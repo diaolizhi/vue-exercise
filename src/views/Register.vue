@@ -46,7 +46,7 @@ export default {
             rules: {
               required: true,
               min: 3,
-              max: 5
+              max: 15
             },
             messages: {
               min: "太短了"
